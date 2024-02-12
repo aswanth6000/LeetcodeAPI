@@ -8,7 +8,7 @@ const Login = () => {
       <div className="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0   bg-white-200 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 ">
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight text-white-900 md:text-2xl text-white">
-            Sign in to your account
+            Sign up to your account
           </h1>
           <form className="space-y-4 md:space-y-6" 
           // onSubmit={handleLogin}
@@ -33,22 +33,42 @@ const Login = () => {
             </div>
             {/* {errors.email && <p className='block mb-2 mt-2 text-sm font-medium text-red-600 dark:text-red-600 text-center'>{errors.email}</p>} */}
             <div>
-              <label
-                htmlFor="password"
-                className="block mb-2 text-sm font-medium text-white-900 text-white"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                // value={password}
-                // onChange={(e)=> setPassword(e.target.value)}
-                className="bg-white-50 border border-white-300 text-white-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 text-white dark:focus:ring-green-500 dark:focus:border-green-500 focus:outline-none"
-                placeholder="••••••••"
-                required
-              />
+            <label
+                    htmlFor="password"
+                    className="block mb-2 text-sm font-medium text-white-900 text-white"
+                  >
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    // value={password}
+                    // onChange={(e) => setPassword(e.target.value)}
+                    className="bg-white-50 border border-white-300 text-white-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 focus:outline-none"
+                    placeholder="••••••••"
+                    required
+                  />
+                  {/* {errors.password && <p className='block mb-2 mt-2 text-sm font-medium text-red-600 dark:text-red-600 text-center'>{errors.password}</p>} */}
+
+                </div>
+                <div>
+                  <label
+                    htmlFor="confirmPassword"
+                    className="block mb-2 text-sm font-medium text-white-900 text-white"
+                  >
+                    Confirm Password
+                  </label>
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    // value={confirmPassword}
+                    // onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="bg-white-50 border border-white-300 text-white-900 sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 focus:outline-none"
+                    placeholder="••••••••"
+                    required
+                  />
             </div>
             <button
               type="submit"
@@ -63,9 +83,9 @@ const Login = () => {
             </div>
 
             <p className="text-sm text-white font-light text-white-500 flex justify-center dark:text-white-400">
-              Dont have an account yet?&nbsp;{' '}
-              <a href="/signup" className="font-medium text-green-600 hover:underline dark:text-green-500">
-                Sign up
+              Already have an account yet?&nbsp;{' '}
+              <a href="/login" className="font-medium text-green-600 hover:underline dark:text-green-500">
+                Login
               </a>
             </p>
           </form>
