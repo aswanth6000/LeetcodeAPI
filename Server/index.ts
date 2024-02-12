@@ -1,6 +1,8 @@
 import express from 'express';
 import axios from 'axios';
 import cheerio from 'cheerio';
+import connectToDatabase from './config/db';
+import router from './modules/routes/userRoutes';
 
 const app = express();
 const port = 3000;
@@ -45,6 +47,9 @@ async function getUserInfo(username: string): Promise<void> {
   }
 }
 getUserInfo(username);
+app.use(express.json())
+app.use(router)
+connectToDatabase()
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}...`);
