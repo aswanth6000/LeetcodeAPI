@@ -1,13 +1,13 @@
-const express = require('express');
-const axios = require('axios');
-const cheerio = require('cheerio');
+import express from 'express';
+import axios from 'axios';
+import cheerio from 'cheerio';
 
 const app = express();
 const port = 3000;
 
 const username = 'aswanth6000';
 
-async function getUserInfo(username) {
+async function getUserInfo(username: string): Promise<void> {
   try {
     const response = await axios.get(`https://leetcode.com/${username}/`);
 
@@ -39,7 +39,7 @@ async function getUserInfo(username) {
     } else {
       throw new Error('Failed to fetch data');
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error:', error.message);
     throw new Error('Error fetching data from LeetCode');
   }
