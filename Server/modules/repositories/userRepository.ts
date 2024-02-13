@@ -33,4 +33,22 @@ export class userRepository{
             throw new Error("user not exist")
         }
     }
+    async forgotpassword(data:string){
+        try{
+            const user=await userModel.find({email:data});
+            return user
+        }catch(error){
+            throw new Error("user not exist")
+        }
+    }
+    async updatepassword(data:any){
+        try{
+            const user=await userModel.find({email:data.email});
+            user[0].password=data.passord;
+            user[0].save()
+            return user
+        }catch(error){
+            throw new Error("user not exist")
+        }
+    }
 }
