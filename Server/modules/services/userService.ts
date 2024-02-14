@@ -28,4 +28,18 @@ export class userService{
             throw new Error("user not exist")
         }
     }
+    async forgotpassword(email:string){
+        try{
+            return userrepository.forgotpassword(email)
+        }catch(error:any){
+            throw new Error("user not exist")
+        }
+    }
+    async updatepassword(data:any){
+        try{
+            return userrepository.updatepassword(data)
+        }catch(error:any){
+            throw new Error("user not exist")
+        }
+    }
 }

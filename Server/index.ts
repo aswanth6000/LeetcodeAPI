@@ -5,7 +5,7 @@ import connectToDatabase from './config/db';
 import router from './modules/routes/userRoutes';
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 const username = 'aswanth6000';
 

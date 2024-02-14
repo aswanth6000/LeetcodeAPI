@@ -48,4 +48,35 @@ export class userController {
     
     }
   }
+  async forgotpassword(req:Request,res:Response){
+    try{
+      const data:any=req.body
+      console.log( data)
+      const userdata:any=await userservice.forgotpassword(data.email);
+      console.log("userdata is==>",userdata);
+      
+      if(userdata.length>0){
+        console.log("inside block")
+        let encrptpassword = await bcrypt.hash(data.password, 10);
+        console.log("encrypted password is==>",encrptpassword)
+        const uerdata={
+          email:data.email,
+          newpassword:encrptpassword
+        }
+          const userverify= await userservice.updatepassword(uerdata)
+          console.log("userverify===>",userverify)
+          if(userverify){
+              res.status(200).json("update success success")
+          }else{
+              res.status(401).json("incorrect password")
+          }
+      }else{
+        res.status(401).json("user not exist")
+      }
+  }catch(error){
+      console.log("error called")
+      throw new Error("user not existing");
+  
+  }
+  }
 }
