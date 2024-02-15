@@ -2,7 +2,7 @@ import { ParticlesComponent } from "@/components/particles"
 
 const Login = () => {
   return (
-    <section className="bg-black dark:bg-white-900">
+    <section className="bg-black dark:bg-white-900 h-auto">
       <ParticlesComponent/>
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <div className="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0   bg-white-200 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 ">
