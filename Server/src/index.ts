@@ -1,8 +1,8 @@
 import express from 'express';
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import connectToDatabase from './config/db';
-import router from './modules/routes/userRoutes';
+import router from '../modules/routes/userRoutes';
 
 const app = express();
 const port = 4000;

@@ -1,5 +1,5 @@
-import userlogin from "../../interfaces/userInterface";
-import userModel from "../../model/userSchema";
+import userlogin from "../../src/interfaces/userInterface";
+import userModel from "../../src/model/userSchema";
 
 
 
@@ -33,6 +33,7 @@ export class userRepository{
             throw new Error("user not exist")
         }
     }
+    //forgot password
     async forgotpassword(data:string){
         try{
             const user=await userModel.find({email:data});
@@ -41,6 +42,7 @@ export class userRepository{
             throw new Error("user not exist")
         }
     }
+    //update password
     async updatepassword(data:any){
         try{
             const user=await userModel.find({email:data.email});

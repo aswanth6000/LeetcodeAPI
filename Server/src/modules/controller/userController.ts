@@ -1,7 +1,7 @@
 import { userService } from "../services/userService";
 import { Response, Request } from "express";
 import bcrypt from "bcrypt";
-import userlogin from "../../interfaces/userInterface";
+import userlogin from "../../src/interfaces/userInterface";
 
 const userservice = new userService();
 
@@ -31,11 +31,8 @@ export class userController {
         const data:userlogin=req.body
         console.log(data)
         const userdata:any=await userservice.loginUser(data);
-        console.log("userdta is=======>",userdata)
         if(userdata){
-            console.log("userdta is ==>",userdata)
             const userverify= await bcrypt.compare(data.password,userdata[0].password)
-            console.log("userverify===>",userverify)
             if(userverify){
                 res.status(200).json("login success")
             }else{

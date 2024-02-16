@@ -1,4 +1,4 @@
-import userlogin from "../../interfaces/userInterface";
+import userlogin from "../../src/interfaces/userInterface";
 import { userRepository } from "../repositories/userRepository";
 
 

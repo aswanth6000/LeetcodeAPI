@@ -18,14 +18,9 @@ const userSchema = new mongoose.Schema<UserDocument>({
     email: {
       type: String,
     },
-   phone: {
-        type:String
-    },
     password: {
       type: String,
     },
-   
-
   });
   
   const  userModel: Model<UserDocument>= mongoose.model("user", userSchema);
